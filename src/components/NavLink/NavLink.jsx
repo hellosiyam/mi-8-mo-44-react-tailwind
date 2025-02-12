@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const NavLink = ({ route }) => {
     return (
         <div>
@@ -6,5 +8,9 @@ const NavLink = ({ route }) => {
         </div>
     );
 };
+
+NavLink.propTypes = {
+    route : PropTypes.object.isRequired,
+}
 
 export default NavLink;

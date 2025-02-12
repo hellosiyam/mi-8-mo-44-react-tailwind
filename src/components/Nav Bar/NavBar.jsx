@@ -1,4 +1,6 @@
+import { useState } from "react";
 import NavLink from "../NavLink/NavLink";
+import { HiMenuAlt1, HiOutlineX } from "react-icons/hi";
 
 const NavBar = () => {
 
@@ -10,8 +12,16 @@ const NavBar = () => {
         { id: 5, path: "/dashboard", name: "Dashboard" }
     ];
 
+    const [open, setOpen] = useState(true)
+
     return (
         <nav>
+            <div onClick={() => setOpen(!open)} className="md:hidden text-2xl">
+                {
+                  open===false? <HiOutlineX /> : <HiMenuAlt1 />
+                }
+
+            </div>
             <ul className="md:flex">
                 {
                     routes.map(route => <NavLink key={route.id} route={route}></NavLink>)
