@@ -27,7 +27,7 @@ const LineChart = () => {
                 </LChart>
             </div>
             <div>
-                <BarChart width={730} height={250} data={subjectMarksData}>
+                <BarChart width={1080} height={250} data={subjectMarksData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
