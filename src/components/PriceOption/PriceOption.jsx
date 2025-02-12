@@ -8,7 +8,7 @@ const PriceOption = ({ option }) => {
         <div className=" bg-green-500 p-6 text-white rounded-2xl flex flex-col gap-5">
             <h1 className="text-center">
                 <span className="text-7xl font-extrabold">{price}</span>
-                <span className="text-2xl font-bold">/mon</span>
+                <span className="text-2xl font-medium">/mon</span>
             </h1>
             <h1 className="text-center text-3xl font-bold">{name}</h1>
             <div className="flex-grow">
