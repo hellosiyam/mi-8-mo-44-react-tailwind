@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Audio } from 'react-loader-spinner'
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
 const Phones = () => {
 
     const [phones, setPhones] = useState([]);
+
+    const [spinner, setSpinner] = useState(true)
 
     useEffect(() => {
         axios.get('https://openapi.programming-hero.com/api/phones?search=iphone')
@@ -18,11 +21,23 @@ const Phones = () => {
                     return obj
                 });
                 setPhones(phoneWithFakeData)
+                setSpinner(false)
             })
     }, [])
 
     return (
         <div>
+            <div>
+                {spinner && <Audio
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color="green"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle
+                    wrapperClass
+                />}
+            </div>
             <h1 className="text-4xl ">Phones : {phones.length}</h1>
             <div>
                 <BarChart width={1050} height={300} data={phones}>
