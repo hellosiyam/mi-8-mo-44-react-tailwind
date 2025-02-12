@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const NavLink = ({ route }) => {
     return (
         <div>
-            <li className="mr-10">
+            <li className="mr-10 hover:bg-green-700">
                 <a href={route.path}></a>{route.name}</li>
         </div>
     );

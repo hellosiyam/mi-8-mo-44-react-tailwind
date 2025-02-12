@@ -12,17 +12,19 @@ const NavBar = () => {
         { id: 5, path: "/dashboard", name: "Dashboard" }
     ];
 
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
 
     return (
         <nav>
             <div onClick={() => setOpen(!open)} className="md:hidden text-2xl">
                 {
-                  open===false? <HiOutlineX /> : <HiMenuAlt1 />
+                    open === true ? <HiOutlineX /> : <HiMenuAlt1 />
                 }
 
             </div>
-            <ul className="md:flex">
+            <ul className={`md:flex max-md:absolute duration-1000
+                ${open ? '' : 'hidden'}
+                    max-md:bg-green-400 p-4 max-md:ml-4 max-md:rounded-2xl`}>
                 {
                     routes.map(route => <NavLink key={route.id} route={route}></NavLink>)
                 }
